@@ -27,6 +27,8 @@ function adicionarAmigo (){
 function sortearAmigo(){
     num = amigos.length;
     res = Math.round(Math.random() * (num - 1));
-    console.log(amigos[res]); // vendo o amigo sorteado
+    
+    mudaTexto('h2', `O seu amigo secreto é: ${amigos[res]}. Recomeçando o sorteio!`);
+    amigos = [];
 }
 
