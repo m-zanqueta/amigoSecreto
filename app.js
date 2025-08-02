@@ -11,3 +11,8 @@ function adicionarAmigo (){
     console.log(amigos);
     limparCampo();
 }
+
+function sortearAmigo(){
+    num = amigos.length();
+    console.log(num);
+}
