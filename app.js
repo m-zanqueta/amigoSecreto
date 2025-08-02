@@ -9,5 +9,5 @@ function adicionarAmigo (){
     let amigo = document.querySelector('input').value;
     amigos.push(amigo);
     console.log(amigos);
-    limparCampo()
+    limparCampo();
 }
