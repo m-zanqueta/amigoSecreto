@@ -26,9 +26,14 @@ function adicionarAmigo (){
 
 function sortearAmigo(){
     num = amigos.length;
-    res = Math.round(Math.random() * (num - 1));
-    
-    mudaTexto('h2', `O seu amigo secreto é: ${amigos[res]}. Recomeçando o sorteio!`);
-    amigos = [];
+    if(num == 0){
+        mudaTexto('h2', 'Não há amigos para sortear!')
+    } else {
+        
+        res = Math.round(Math.random() * (num - 1));
+        mudaTexto('h2', `O seu amigo secreto é: ${amigos[res]}. Recomeçando o sorteio!`);
+        amigos = [];
+    }
+
 }
 
