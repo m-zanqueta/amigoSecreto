@@ -5,15 +5,22 @@ function limparCampo(tag){
     campo.value = '';
 }
 
-function mudaTexto(tag, texto){
+function mudaTexto(tag, texto){ 
     let campo = document.querySelector(tag);
-    campo.innerHTML(texto);
+    campo.innerHTML = texto;
 }
 
 function adicionarAmigo (){
     let amigo = document.querySelector('input').value;
-    amigos.push(amigo);
-    console.log(amigos); //testando a incrementação na lista
+   
+    if (amigo == ''){
+        mudaTexto('h2', "Digite um nome válido!");
+    } else{
+        mudaTexto('h2', 'Digite o nome de outro amigo!')
+        amigos.push(amigo);
+        console.log(amigos); //testando a incrementação na lista
+    }
+
     limparCampo('input');
 }
 
@@ -22,3 +29,4 @@ function sortearAmigo(){
     res = Math.round(Math.random() * (num - 1));
     console.log(amigos[res]); // vendo o amigo sorteado
 }
+
