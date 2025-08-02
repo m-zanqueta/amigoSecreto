@@ -1,4 +1,7 @@
 let amigos = [];
+let cont = 0;
+msg_res = document.getElementById('resultado');
+candidato = document.getElementById('listaAmigos');
 
 function limparCampo(tag){
     let campo = document.querySelector(tag);
@@ -18,9 +21,13 @@ function adicionarAmigo (){
     } else{
         mudaTexto('h2', 'Digite o nome de outro amigo!')
         amigos.push(amigo);
-        console.log(amigos); //testando a incrementação na lista
+        msg_res.innerHTML = '';
+        candidato.innerHTML += `${amigos[cont]} <br/>`;
+        cont++;
     }
 
+
+    
     limparCampo('input');
 }
 
@@ -31,8 +38,12 @@ function sortearAmigo(){
     } else {
         
         res = Math.round(Math.random() * (num - 1));
-        mudaTexto('h2', `O seu amigo secreto é: ${amigos[res]}. Recomeçando o sorteio!`);
+        msg_res.innerHTML = `O seu amigo secreto é: ${amigos[res]}!`;
+        mudaTexto('h2', 'Reiniciando o sorteio. Digite outro nome!');
         amigos = [];
+        lista = document.getElementById('listaAmigos');
+        lista.innerHTML = '';
+        cont = 0;
     }
 
 }
